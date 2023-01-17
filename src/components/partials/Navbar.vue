@@ -13,6 +13,7 @@
             >
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <span class="navbar-text"> Total Blog = {{ postsTotal }} </span>
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
@@ -33,7 +34,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+    props: {
+        postsTotal: {
+            type: Number,
+        },
+    },
+};
 </script>
 
 <style lang="scss" scoped></style>
