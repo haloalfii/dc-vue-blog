@@ -13,19 +13,27 @@
             >
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <span class="navbar-text"> Total Blog = {{ postsTotal }} </span>
+
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#"
-                            >Home</a
+                        <!-- <a class="nav-link active" aria-current="page" href="#"
+                            ></a
+                        > -->
+                        <router-link
+                            to="/"
+                            class="nav-link"
+                            :class="{ active: this.$route.path == '/' }"
+                            >Home</router-link
                         >
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
+                        <router-link
+                            to="/add"
+                            class="nav-link"
+                            :class="{ active: this.$route.path == '/add' }"
+                            >Add Blog</router-link
+                        >
                     </li>
                 </ul>
             </div>
@@ -34,13 +42,7 @@
 </template>
 
 <script>
-export default {
-    props: {
-        postsTotal: {
-            type: Number,
-        },
-    },
-};
+export default {};
 </script>
 
 <style lang="scss" scoped></style>
